@@ -1,0 +1,408 @@
+/*///////*/
+/*General*/
+/*//////*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: solid lightgray transparent 0.5px;
+}
+
+body {
+  /*background-color: white;*/
+  /*color: black;*/
+  font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif
+}
+
+/*
+.chart {
+  width: 100%; 
+  min-height: 450px;
+}
+*/
+
+/*///////////////////*/
+/*Dark vs. Light Mode*/
+/*///////////////////*/
+
+#toggle {
+  display: block;
+  text-align: center;
+}
+
+#toggle i:hover {
+  color: #ccc;
+}
+
+.dark-mode {
+  background-color: rgb(38, 38, 38);
+  color: darkgray;
+}
+
+.dark-mode nav a {
+  color: darkgray;
+}
+
+.moon {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: black;
+}
+
+.sun {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color:darkgray;
+}
+
+/*////*/
+/* RWD*/
+/*////*/
+
+[class*="col-"] {
+  float: left;
+  padding: 10px;
+  display: table;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+  margin: 0
+}
+
+.col-1 {
+  width: 8.33%;
+}
+
+.col-2 {
+  width: 16.66%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.33%;
+}
+
+.col-5 {
+  width: 41.66%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.33%;
+}
+
+.col-8 {
+  width: 66.66%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33%;
+}
+
+.col-11 {
+  width: 91.66%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+/*////////////////*/
+/* Navigation Bar */
+/*////////////////*/
+
+.active {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  /*background-color: white;*/
+  width: 50%;
+  margin: 0 auto;
+}
+
+/*
+.center {
+  text-align: center;
+}
+*/
+
+
+/*
+hr {
+  width: 100%;
+}
+*/
+
+/*
+
+#title a {
+  display: block;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+  font-size: 3em;
+}
+
+*/
+
+nav {
+  width: 100%;
+  padding-top: 1em;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+col ul li:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+/* Hamburger icon/mobile*/
+
+#hamburger-icon {
+  width: 50%;
+  display: none;
+  cursor: pointer;
+}
+
+#hamburger-icon div {
+  width: 25px;
+  height: 1px;
+  background-color: black;
+  margin: 6px auto;
+  transition: 0.5s;
+}
+
+.open .bar1 {
+  -webkit-transform: rotate(45deg) translate(0px, 3px);
+  transform: rotate(45deg) translate(0px, 3px);
+}
+
+.open .bar2 {
+  opacity: 0;
+}
+
+.open .bar3 {
+  -webkit-transform: rotate(-45deg) translate(6px, -10px);
+  transform: rotate(-45deg) translate(6px, -10px);
+}
+
+.mobile-menu {
+  display: none;
+  position: relative;
+  width: 100%;
+}
+
+.open .mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@media only screen and (max-width: 950px) {
+  body {
+    width: 95%;
+    margin: auto;
+    background-color: white;
+    color: black;
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif
+  }
+
+  header {
+    display: block;
+    width: 100%;
+    padding: 0;
+    position: fixed;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  nav hr {
+    display: none;
+  }
+
+  #hamburger-icon {
+    visibility: visible;
+    width: 100%;
+    display: block;
+  }
+
+  p {
+    width: 100%;
+    margin: auto;
+  }
+  [class*="col-"] {
+    width: 100%;
+    float: left;
+    padding: 10px;
+    display: table;
+  }
+}
+
+
+
+/*//////////////// */
+/* Dropdown menues */
+/*//////////////// */
+
+label,
+select {
+  width: 100%;
+  display: block;
+  text-align: left;
+}
+
+/*/////////////////////////*/
+/* Explore Section / Table */
+/*/////////////////////////*/
+
+#compTable {
+  border-collapse: collapse;
+  border-top: solid black 1px;
+}
+
+tr {
+  width: 100%;
+  border-bottom: solid black 1px;
+}
+
+td {
+  text-align: center;
+}
+
+#firstCountry,
+#secondCountry,
+#compRegion {
+  text-align: left;
+  width: 50%;
+  height: 120px;
+}
+
+/*/////////////////////////*/
+/* Analysis Section Styling*/
+/*/////////////////////////*/
+
+/* Get rid of the default crap*/
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: darkgray;
+  outline: none;
+  opacity: 1;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: darkgray;
+  cursor: pointer;
+}
+
+/* Format the slider overlay */
+
+.inpt_cont {
+  position: relative;
+  height: 40px;
+}
+
+.lay1 {
+  position: relative;
+  z-index: 1;
+}
+
+.lay2 {
+  transform: translate(0, -100%);
+  z-index: 2;
+}
+
+/* Create New CLasses to be added with JQuery to color the thumbs*/
+.vl::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ff0000;
+  cursor: pointer;
+}
+
+.l::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffa700;
+  cursor: pointer;
+}
+
+.m::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff400;
+  cursor: pointer;
+}
+
+.h::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #a3ff00;
+  cursor: pointer;
+}
+
+.vh::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #2cba00;
+  cursor: pointer;
+}
+

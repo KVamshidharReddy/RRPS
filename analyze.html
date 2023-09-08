@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Revealed Relative Policy Strengths</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <!--Desktop Menu-->
+        <h1 style="text-align: center">Revealed Relative Policy Strengths</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Explore</a></li>
+                <li><a href="compare.html">Compare</a></li>
+                <li><a href="analyze.html" class="active">Analyze</a></li>
+            </ul>
+            <br>
+        </nav>
+        <!--Dark vs light mode section-->
+        <div id="toggle">
+            <button class="moon" style="font-size: small;">View <i class="fa fa-sun-o" style="font-size: 16px"></i>
+                Mode</button>
+        </div>
+        <hr>
+    </header>
+
+    <!--First Row: Dropdown menu-->
+    <div class="row">
+        <br>
+        <h2 class="center" style="text-align: center">Simulate a Country's Development Potential of Changes of Revealed
+            Relative Policy Strengths
+        </h2>
+
+        <!--First empty column-->
+        <div class="col-3"></div>
+
+        <!--Second Column - Select Country-->
+        <div class="col-6"></div>
+        <!--Third column - Simulation Table-->
+        <div class="col-3"></div>
+    </div>
+
+    <!--Second Row: Charts-->
+    <div class="row">
+        <!-- First empty column -->
+        <div class="col-3"></div>
+
+        <!-- Second column: simulation panel -->
+
+        <div class="col-2">
+            <!--Indicator dropdown menu-->
+            <label for="analysisCountry">Select a country: </label>
+            <select id="analysisCountry" onclick="simulationPanelDefault(), simulation(), colorThumbs()"></select>
+            <br>
+            <div onchange="colorThumbs(), simulation()">
+                <div class='inpt_cont'>
+                    <div class="lay1">
+                        <label for='MacroStab' class='fix'>Macroeconomic Stability</label>
+                        <input class="slider" name='uival' title='Change Macroeconomic Stability Rating' type="range"
+                            min="0" max="12.5" step="3.125" id="MacroStab">
+                    </div>
+                    <div class="lay2">
+                        <input class="slider" name='actval' title='Actual Macroeconomic Stability Rating' type="range"
+                            min="0" max="12.5" step="3.125" id="MacroStabBg" disabled>
+                    </div>
+                </div>
+                <br>
+
+                <div class='inpt_cont'>
+                    <div class=" lay1">
+                        <label for='MicroComp' class='fix'>Microeconomic Competitiveness</label>
+                        <input class="slider" name='uival' title='Change Microeconomic Competitiveness Rating'
+                            type="range" min="0" max="12.5" step="3.125" id="MicroComp">
+                    </div>
+                    <div class="lay2">
+                        <input class="slider" name='actval' title='Actual Microeconomic Competitiveness Rating'
+                            type="range" min="0" max="12.5" step="3.125" id="MicroCompBg" disabled>
+                    </div>
+                </div>
+                <br>
+
+                <div class='inpt_cont'>
+                    <div class="lay1">
+                        <label for='HumCapProd' class='fix'>Human Capital Production</label>
+                        <input class="slider" name='uival' title='Change Human Capital Production Rating' type="range"
+                            min="0" max="12.5" step="3.125" id="HumCapProd">
+                    </div>
+                    <div class="lay2">
+                        <input class="slider" name='actval' title='Actual Human Capital Production Rating' type="range"
+                            min="0" max="12.5" step="3.125" id="HumCapProdBg" disabled>
+                    </div>
+                </div>
+                <br>
+
+                <div class='inpt_cont'>
+                    <div class="lay1">
+                        <label for='PubHealth' class='fix'>Public Health</label>
+                        <input class="slider" name='uival' title='Change Public Health Rating' type="range" min="0"
+                            max="12.5" step="3.125" id="PubHealth">
+                    </div>
+                    <div class="lay2">
+                        <input class="slider" name='actval' title='Actual Public Health Rating' type="range" min="0"
+                            max="12.5" step="3.125" id="PubHealthBg" disabled>
+                    </div>
+                </div>
+                <br>
+
+                <div class='inpt_cont'>
+                    <div class="lay1">
+                        <label for='EquitSocDev' class='fix'>Equitable Social Development</label>
+                        <input class="slider" name='uival' title='Change Equitable Social Development Rating'
+                            type="range" min="0" max="12.5" step="3.125" id="EquitSocDev">
+                    </div>
+                    <div class="lay2">
+                        <input class="slider" name='actval' title='Actual Equitable Social Development Rating'
+                            type="range" min="0" max="12.5" step="3.125" id="EquitSocDevBg" disabled>
+                    </div>
+                </div>
+                <br>
+
+                <div class='inpt_cont'>
+                    <div class="lay1">
+                        <label for='SocSec' class='fix'>Social Security</label>
+                        <input class="slider" name='uival' title='Change Equitable Social Development Rating'
+                            type="range" min="0" max="12.5" step="3.125" id="SocSec">
+                    </div>
+                    <div class="lay2">
+                        <input class="slider" name='actval' title='Actual Social Security Rating' type="range" min="0"
+                            max="12.5" step="3.125" id="SocSecBg" disabled></div>
+                </div>
+                <br>
+
+                <div class='inpt_cont'>
+                    <div class="lay1">
+                        <label for='EnvSust' class='fix'>Environmental Sustainability</label>
+                        <input class="slider" name='uival' title='Change Environmental Sustainability Rating'
+                            type="range" min="0" max="12.5" step="3.125" id="EnvSust">
+                    </div>
+                    <div class="lay2">
+                        <input class="slider" name='actval' title='Actual Environmental Sustainability Rating'
+                            type="range" min="0" max="12.5" step="3.125" id="EnvSustBg" disabled>
+                    </div>
+                </div>
+                <br>
+
+                <div class='inpt_cont'>
+                    <div class="lay1">
+                        <label for='PeaceConf' class='fix'>Peace and Conflict</label>
+                        <input class="slider" name='uival' title='Change Peace and Conflict Rating' type="range" min="0"
+                            max="12.5" step="3.125" id="PeaceConf">
+                    </div>
+                    <div class="lay2">
+                        <input class="slider" name='uival' title='Change Peace and Conflict Rating' type="range" min="0"
+                            max="12.5" step="3.125" id="PeaceConfBg" disabled>
+                    </div>
+                </div>
+                <br>
+                <hr>
+
+                <div>
+                    <label for='RRPSscaled' class='fix'>Overall Revealed Relative Policy Strength Rating</label>
+                    <div class="lay1">
+                        <input class="slider" name='actval' title='Actual Overall Score' type="range" min="0" max="12.5"
+                            step="3.125" id="RRPSscaled" disabled><br>
+                    </div>
+                    <div class="lay2">
+                        <input class="slider" name='actval' title='New Simulated Overall Score' type="range" min="0"
+                            max="12.5" step="3.125" id="RRPSscaledBg" disabled><br>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Third column: Line Chart -->
+        <div class="col-4" id="curve_chart" style="width: 40%; height: 650px">
+        </div>
+
+        <!--Fourth column: Emty-->
+        <div class="col-3"></div>
+    </div>
+
+
+    <!--These are the links to external sheets-->
+    <script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript" src="assets.js"></script>
+
+</body>
+
+</html>

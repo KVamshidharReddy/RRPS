@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Revealed Relative Policy Strengths</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <!--Desktop Menu-->
+        <h1 style="text-align: center">Revealed Relative Policy Strengths</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Explore</a></li>
+                <li><a href="compare.html">Compare</a></li>
+                <li><a href="analyze.html">Analyze</a></li>
+            </ul>
+            <br>
+        </nav>
+        <!--Dark vs light mode section-->
+        <div id="toggle">
+            <button class="moon" style="font-size: small;">View <i class="fa fa-sun-o" style="font-size: 16px"></i>
+                Mode</button>
+        </div>
+        <hr>
+    </header>
+
+
+    <div class="row">
+
+        <!--Section header-->
+        <br>
+        <h2 class="center" style="text-align: center">Explore Revealed Relative Policy Strengths Globally</h2>
+        <br>
+
+        <!--First empty column-->
+        <div class="col-3"></div>
+        <!--Second Column - Select Indicator and Time-->
+        <div class="col-2" onchange="worldMapData()">
+            <br>
+            <!--Indicator dropdown menu-->
+            <label for="indicatorSelected">Select an indicator: </label>
+            <select id="indicatorSelected">
+                <option value="MacroStab">Macroeconomic Stability</option>
+                <option value="MicroComp">Microeconomic Competitiveness</option>
+                <option value="HumCapProd">Human Capital Production</option>
+                <option value="PubHealth">Public Health</option>
+                <option value="EquitSocDev">Equitable Social Development</option>
+                <option value="SocSec">Social Security</option>
+                <option value="EnvSust">Environmental Sustainability</option>
+                <option value="PeaceConf">Peace and Conflict</option>
+                <option value="RRPSscaled">Overall Revealed Relative Policy Strength</option>
+            </select>
+            <br>
+            <br>
+            <label for="yearSelected"> Slect a time period</label>
+            <select id="yearSelected"> Slect a time period</label>
+                <option value=2000>1996-2000</option>
+                <option value=2005>2001-2005</option>
+                <option value=2010>2006-2010</option>
+                <option value=2015>2011-2015</option>
+                <option value=2020>2016-2020</option>
+            </select>
+            <br>
+        </div>
+        <!--Map Location-->
+        <div class="col-4">
+            <br>
+            <div id="regions_div" style="width: 600px; height: 500px;" class="chart"></div>
+        </div>
+        <!--Last empty column-->
+        <div class="col-4"></div>
+
+        <!--These are the links to external sheets-->
+        <script type="text/javascript" src="assets.js"></script>
+        <script type="text/javascript" src="data.js"></script>
+</body>
+
+</html>
